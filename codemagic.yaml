@@ -7,9 +7,6 @@ workflows:
     scripts:
       - flutter clean
       - flutter pub get
-      - cd ios
-      - pod install
-      - cd ..
       - flutter build ios --release --no-codesign --ios-version=14.0
     artifacts:
       - build/ios/ipa/*.ipa
