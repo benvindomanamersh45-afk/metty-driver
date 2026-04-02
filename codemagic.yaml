@@ -1,0 +1,15 @@
+workflows:
+  ios-build:
+    name: Build para iOS
+    environment:
+      flutter: stable
+      xcode: latest
+    scripts:
+      - flutter clean
+      - flutter pub get
+      - cd ios
+      - pod install
+      - cd ..
+      - flutter build ios --release --no-codesign --ios-version=14.0
+    artifacts:
+      - build/ios/ipa/*.ipa
