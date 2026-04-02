@@ -1,3 +1,4 @@
+
 workflows:
   ios-build:
     name: Build para iOS
@@ -7,6 +8,6 @@ workflows:
     scripts:
       - flutter clean
       - flutter pub get
-      
+      - flutter build ios --release --no-codesign
     artifacts:
       - build/ios/ipa/*.ipa
